@@ -56,7 +56,6 @@ export const Register = () => {
 
 	return (
 		<AuthLayout title="Create account">
-			<h1>FormValid: {isFormValid ? 'valid' : 'not valid'}</h1>
 			<form onSubmit={onSubmit}>
 				<Grid container gap={2}>
 					<Grid
@@ -74,8 +73,8 @@ export const Register = () => {
 							name="displayName"
 							value={displayName}
 							onChange={onInputChange}
-							error={displayNameValid && formSubmitted}
-							helperText={displayNameValid}
+							error={!!displayNameValid && formSubmitted}
+							helperText={formSubmitted && displayNameValid}
 						/>
 					</Grid>
 
@@ -89,7 +88,7 @@ export const Register = () => {
 							value={email}
 							onChange={onInputChange}
 							error={!!emailValid && formSubmitted}
-							helperText={emailValid}
+							helperText={formSubmitted && emailValid}
 						/>
 					</Grid>
 
@@ -102,8 +101,8 @@ export const Register = () => {
 							name="password"
 							value={password}
 							onChange={onInputChange}
-							error={passwordValid && formSubmitted}
-							helperText={passwordValid}
+							error={!!passwordValid && formSubmitted}
+							helperText={formSubmitted && passwordValid}
 						/>
 					</Grid>
 

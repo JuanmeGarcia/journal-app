@@ -15,6 +15,7 @@ export const NothingSelected = () => {
 				padding: 4,
                 borderRadius: '10px'
 			}}
+			className="animate__animated animate__fadeIn animate__fast"
 		>
             <Grid 
                 item

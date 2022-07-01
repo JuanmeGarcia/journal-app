@@ -16,7 +16,7 @@ export const AuthLayout = ({children, title = ''}) => {
 		>
 			<Grid
 				item
-				className="box-shadow"
+				className="box-shadow animate__animated animate__fadeIn animate__fast"
 				xs={3}
 				sx={{
 					backgroundColor: 'white',

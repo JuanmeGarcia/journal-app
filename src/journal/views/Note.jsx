@@ -10,6 +10,7 @@ export const Note = () => {
 			justifyContent={'space-between'}
 			alignItems={'center'}
 			sx={{ mb: 1 }}
+			className="animate__animated animate__fadeIn animate__fast"
 		>
 			<Grid item>
 				<Typography fontSize={40} fontWeight={'light'}>
