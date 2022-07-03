@@ -1,11 +1,24 @@
-import { TurnedInNot } from '@mui/icons-material'
-import { Box, Divider, Drawer, Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material'
+import {
+	Box,
+	Divider,
+	Drawer,
+	List,
+	Toolbar,
+	Typography,
+} from '@mui/material'
 import { useSelector } from 'react-redux'
+import { Note } from './'
 
 export const Sidebar = ({ drawerWidth = 240 }) => {
+	const { displayName } = useSelector(state => state.auth)
+	const { notes } = useSelector(state => state.journal)
 
-	const { displayName } =	useSelector(state => state.auth)
-
+	const renderNotes = notes.map(note => (
+		<Note 
+			key={note.id} 
+			{...note}
+		/>
+	))
 
 	return (
 		<>
@@ -14,7 +27,7 @@ export const Sidebar = ({ drawerWidth = 240 }) => {
 				sx={{
 					width: { sm: drawerWidth },
 					flexShrink: { sm: 0 },
-					margin: 0
+					margin: 0,
 				}}
 			>
 				<Drawer
@@ -35,34 +48,7 @@ export const Sidebar = ({ drawerWidth = 240 }) => {
 					</Toolbar>
 					<Divider />
 
-                    <List
-					>
-                        {
-                            ['Enero', 'Febreo', 'Marzo', 'Abril'].map(month=>(
-                                <ListItem key={month}
-									sx={{
-										padding: 0,
-									}}
-								>
-                                    <ListItemButton 
-										primary={month} 
-										sx={{
-											paddingBlock: '15px'
-										}}
-									>
-                                        <ListItemIcon>
-                                            <TurnedInNot />
-                                        </ListItemIcon>
-                                        <Grid container>
-                                            <ListItemText primary={month} />
-                                            <ListItemText secondary={'loreorem lorem lorem lorem'} />
-
-                                        </Grid>
-                                    </ListItemButton>
-                                </ListItem>
-                            ))
-                        }
-                    </List>
+					<List>{renderNotes}</List>
 				</Drawer>
 			</Box>
 		</>
