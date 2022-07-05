@@ -15,6 +15,12 @@ const formValidations = {
 	displayName: [value => value.length > 2, 'The name is required'],
 }
 
+const dataForm = {
+	displayName: '',
+	email: '',
+	password: '',
+}
+
 export const Register = () => {
 	const [formSubmitted, setFormSubmitted] = useState(false)
 
@@ -35,11 +41,7 @@ export const Register = () => {
 		emailValid,
 		passwordValid,
 	} = useForm(
-		{
-			displayName: '',
-			email: '',
-			password: '',
-		},
+		dataForm,
 		formValidations
 	)
 
