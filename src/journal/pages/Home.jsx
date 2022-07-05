@@ -13,7 +13,7 @@ export const Home = () => {
 			{
 				!!activeNote 
 					? <Note />
-					:<NothingSelected />
+					: <NothingSelected />
 			}
 
 			<FloatingButton />

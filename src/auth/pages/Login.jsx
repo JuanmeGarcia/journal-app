@@ -4,21 +4,22 @@ import { Grid, TextField, Button, Link, Alert } from '@mui/material'
 import { Google } from '@mui/icons-material'
 import { AuthLayout } from '../layout/AuthLayout'
 import {
-	checkingAuthentication,
 	startGoogleSignIn,
 	startLoginWithEmailPassword,
 } from '../../store/auth'
 import { useForm } from '../../hooks'
 import { useMemo } from 'react'
 
+const formData = {
+	email: '',
+	password: '',
+}
+
 export const Login = () => {
 	const dispatch = useDispatch()
 	const { status, errorMessage } = useSelector(state => state.auth)
 
-	const { email, password, onInputChange } = useForm({
-		email: '',
-		password: '',
-	})
+	const { email, password, onInputChange } = useForm(formData)
 
 	const isAuthenticating = useMemo(() => status === 'checking', [status])
 

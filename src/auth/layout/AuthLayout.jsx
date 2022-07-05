@@ -15,9 +15,8 @@ export const AuthLayout = ({children, title = ''}) => {
 			}}
 		>
 			<Grid
-				item
+				container
 				className="box-shadow animate__animated animate__fadeIn animate__fast"
-				xs={3}
 				sx={{
 					backgroundColor: 'white',
 					padding: 3,
@@ -33,8 +32,6 @@ export const AuthLayout = ({children, title = ''}) => {
 				>
 					{ title }
 				</Typography>
-
-                {/* children */}
 
                 { children }
 			</Grid>

@@ -2,12 +2,16 @@ import { Grid, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui
 import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
 import { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
-import { setActiveNote } from '../../store/journal';
+import { setActiveNote, toggleIsActive } from '../../store/journal';
 
 export const Note = ({title, body, id, date, imageUrls = []}) => {
 
     const dispatch = useDispatch()
-
+	
+	const onToggleMenu = () => {
+		dispatch(toggleIsActive())
+	}
+	
     const handleOnClick = () => {
         dispatch(setActiveNote({
             title,
@@ -16,6 +20,7 @@ export const Note = ({title, body, id, date, imageUrls = []}) => {
             date,
             imageUrls
         }))
+		onToggleMenu()
 	}
 
     const newTitle = useMemo(()=>{
@@ -29,6 +34,7 @@ export const Note = ({title, body, id, date, imageUrls = []}) => {
             ? body.substring(0, 17) + '...'
             : body
     }, [body])
+
 
 	return (
 		<ListItem

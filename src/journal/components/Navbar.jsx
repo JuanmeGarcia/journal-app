@@ -2,6 +2,7 @@ import { LogoutOutlined, MenuOutlined } from '@mui/icons-material'
 import { AppBar, Grid, IconButton, Toolbar, Typography } from '@mui/material'
 import { useDispatch } from 'react-redux'
 import { startLogoutWithFirebase } from '../../store/auth'
+import { toggleIsActive } from '../../store/journal'
 
 export const Navbar = ({ drawerWidth }) => {
 
@@ -9,6 +10,10 @@ export const Navbar = ({ drawerWidth }) => {
 
 	const onLogout = () => {
 		dispatch(startLogoutWithFirebase())
+	}
+
+	const onToggleMenu = () => {
+		dispatch(toggleIsActive())
 	}
 
 	return (
@@ -28,6 +33,7 @@ export const Navbar = ({ drawerWidth }) => {
 							mr: 2,
 							display: { sm: 'none' },
 						}}
+						onClick={onToggleMenu}
 					>
 						<MenuOutlined />
 					</IconButton>
