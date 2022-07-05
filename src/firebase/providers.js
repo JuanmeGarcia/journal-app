@@ -8,7 +8,6 @@ export const singInWithGoogle = async () => {
 		const result = await signInWithPopup(FirebaseAuth, googleProvider)
 		// const credentials = GoogleAuthProvider.credentialFromResult(result)
 		const { displayName, email, photoURL, uid } = result.user
-        console.log(`todo OK`);
 		return {
 			ok: true,
 			displayName,
@@ -17,7 +16,6 @@ export const singInWithGoogle = async () => {
 			uid,
 		}
 	} catch (error) {
-        console.log(`todo Mal`);
 
 		const errorMessage = error.message
 		return {

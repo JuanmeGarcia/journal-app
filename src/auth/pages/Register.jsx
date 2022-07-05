@@ -49,7 +49,6 @@ export const Register = () => {
 
 		if(!isFormValid) return
 
-		console.log('Form is valid')
 		dispatch(startCreatingUserWithEmailPassword(formState))
 	}
 

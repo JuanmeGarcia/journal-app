@@ -44,7 +44,6 @@ export const journalSlice = createSlice({
         },
 
         setPhotosToActiveNote: (state, action) => {
-            console.log(action.payload)
             state.activeNote.imageUrls = [...state.activeNote.imageUrls, action.payload].flat()
             state.isSaving = false
         },

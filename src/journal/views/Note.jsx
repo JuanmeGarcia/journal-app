@@ -52,7 +52,6 @@ export const Note = () => {
 		if(target.files <= 0) return
 		dispatch(startUploadingFiles(target.files))
 
-		console.log(`subiendo archivos`);
 	}
 
 	const onDelete = () => {

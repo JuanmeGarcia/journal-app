@@ -105,7 +105,6 @@ export const startDeletingNote = () => {
 		try {
 			const { uid } = getState().auth
 			const { activeNote } = getState().journal
-			console.log({uid, activeNote});
 	
 			const docRef = doc(FirebaseDB, `${uid}/journal/notes/${activeNote.id}`)
 			await deleteDoc(docRef)
