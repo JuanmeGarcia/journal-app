@@ -25,7 +25,6 @@ export const Login = () => {
 
 	const onSubmit = e => {
 		e.preventDefault()
-		if (!email || !password) return
 
 		dispatch(startLoginWithEmailPassword({ email, password }))
 	}

@@ -35,7 +35,7 @@ export const Note = () => {
 	useEffect(()=>{
 		if(messageSaved.length > 0){
 			Swal.fire(
-				'Genial!',
+				'Great!',
 				messageSaved,
 				'success'
 			)
@@ -100,7 +100,7 @@ export const Note = () => {
 					disabled={isSaving}
 				>
 					<SaveOutlined sx={{ fontSize: 30, mr: 1 }} />
-					Guardar
+					Save
 				</Button>
 			</Grid>
 			<Grid container>

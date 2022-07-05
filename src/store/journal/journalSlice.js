@@ -40,7 +40,7 @@ export const journalSlice = createSlice({
                     }
                     : note
             ))
-            state.messageSaved = `Nota actualizada correctamente`
+            state.messageSaved = `Updated note correctly!`
         },
 
         setPhotosToActiveNote: (state, action) => {
